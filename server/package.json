@@ -1,0 +1,10 @@
+{
+  "name": "spinit-matchmaking-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WebSocket matchmaking + production TURN credential endpoint for Spinit",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "ws": "^8.18.0" }
+}
