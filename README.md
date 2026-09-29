@@ -131,7 +131,7 @@ npm start
 Then set in `spinit-config.js` for local testing:
 
 ```js
-window.SPIN_MATCH_WS_URL = '';
+window.SPIN_MATCH_WS_URL = 'wss://spinit-b4sk.onrender.com/ws/match';
 window.SPIN_TURN_API_URL = 'https://spinit-b4sk.onrender.com';
 ```
 
