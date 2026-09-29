@@ -1,0 +1,16 @@
+Spinit 2.0 — Stability & UX upgrade
+
+Fixed / improved:
+- Reliable photo + voice transfer with queued chunk delivery and safer media rendering.
+- Removed the redundant full-audio rebroadcast that could congest the chat channel.
+- Chat input has no maxlength; long conversations use incremental DOM rendering to avoid freezes.
+- Chat history keeps a generous session window for performance rather than limiting message text length.
+- Chat background images are kept in a persistent image layer instead of being recreated on every message.
+- Chat is full-width/full-height by default; selecting a game animates the game panel in and shrinks chat.
+- Added a Chat only control to return to the normal chat-first layout.
+- Truth/Dare round-count display removed; the internal 10-round limit remains.
+- Restored the 2-player Ludo request/accept flow for rooms with more than two players.
+- Server WebSocket payload ceiling raised to 16 MB.
+- Checked inline JavaScript and server.js syntax before packaging.
+
+Deploy the complete folder/ZIP so the chat-backgrounds assets are included.
