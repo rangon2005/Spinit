@@ -1,0 +1,29 @@
+Spinit 2.0 — Reliable Quick Match + Chat Media Fix
+
+1. Quick Match control/game/chat transport is now relayed through the Render WebSocket server.
+   PeerJS remains available for private rooms, but Quick Match no longer depends on
+   PeerJS/WebRTC for the match handshake or game-state channel. This removes the
+   post-Next/Leave race that could leave one device on “Finding your match”.
+
+2. Next/Leave now explicitly tells the server to release the current pair. The other
+   player is immediately returned to fresh matchmaking. A new WebSocket session is
+   created for every new random match.
+
+3. Matchmaking is FIFO and lightweight: the server pairs the first two live waiting
+   sockets without scanning/shuffling a large queue.
+
+4. Chat background assets are included in /chat-backgrounds/ and are applied with an
+   absolute /chat-backgrounds/bg-N.jpg URL whenever a new match is created.
+
+5. Camera/gallery images are sent as ordered WebSocket chunks through the same reliable
+   match relay, so the receiver no longer depends on a WebRTC data-channel race.
+
+6. Production runtime URLs are set in spinit-config.js for the existing Render backend:
+   wss://spinit-b4sk.onrender.com/ws/match
+   https://spinit-b4sk.onrender.com
+
+7. TURN credentials remain server-side.
+
+Note: true multi-instance 20k+ scaling would still require shared matchmaking state
+(e.g. Redis) and multiple backend instances/load balancing. This release focuses on
+reliable pairing and reliable two-player session transport on the current backend.
