@@ -1,0 +1,20 @@
+Spinit 2.0 — Final Game Rebuild
+
+• Quick Match uses the Render WebSocket queue only; stale PeerJS matchmaking is not used.
+• Match pairs are created server-side and both matched clients enter the same chat state.
+• Default matched view is chat-only. No game opens until the user selects one.
+• Desktop: selected game slides in on the LEFT and chat stays on the RIGHT at roughly 50/50.
+• Mobile: selected game and chat share the viewport without page scrolling.
+• Tic Tac Toe initialization fixed so selecting it actually creates the board.
+• Snake initialization fixed so the host starts the authoritative simulation.
+• Ludo is server-authoritative in Quick Match and works through the existing room action path in private rooms.
+• Ludo uses the supplied board image, 2 live pawns per player, 15-second turns, dice animation, safe cells, captures, extra turn on 6, and both-pawns-home win condition.
+• Ludo player names are shown on their assigned board-side colors.
+• Only the two supplied chat backgrounds are used and they alternate per match.
+• The supplied Ludo board image is stored at chat-backgrounds/ludo-board.jpg.
+• Chat remains internally scrollable, but the page itself does not jump/scroll when games open.
+• Visible Truth/Dare round counter is hidden; the 10-round limit remains internal.
+
+Deployment:
+Replace the GitHub/Vercel frontend files and the Render server folder with this ZIP.
+Keep spinit-config.js and the Render environment variables as before.
