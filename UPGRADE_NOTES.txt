@@ -1,0 +1,30 @@
+Spinit UX update — September 30, 2026
+
+Changes in this build:
+- Truth or Dare is fixed at exactly 10 rounds; the home-page round selector is removed.
+- The old in-game Custom button is removed.
+- Chat is the default/full-screen match view when no mini-game is active.
+- Games launcher now lives in the chat header, so users do not need to scroll to the top to switch games.
+- Ludo has been removed from the game menu and active game UI.
+- Leave and Next Player are visible above the chat instead of inside the Truth/Dare game area.
+- Both players can change Friendzone / Unknown / Hot mode during a match.
+- Chat background images are applied directly to the chat area with a light overlay so the supplied images remain visible.
+- Chat scrolling no longer jumps to the bottom on every render; mobile touch scrolling is enabled.
+- Long-press a message to open the reaction picker. Reactions can be toggled from the reaction chips.
+- Typing indicator is sent over the existing multiplayer transport and shown when the other player types.
+- Game selection remains synchronized through the existing host-authoritative state transport.
+- Games menu is now a fixed 2×2 panel so all four games are visible without clipping.
+- Added Rock Paper Scissors as a simple authoritative 2-player multiplayer game.
+- Replaced the header Friends button with a marketing Share button (native share + WhatsApp + Telegram + copy link).
+- Leave and Next Player buttons are compact golden controls in the chat header.
+
+
+Final touch/media/color patch — September 30, 2026
+- Games menu is portaled to the document body so chat text/scroll layers cannot cover its buttons.
+- Chat message pane uses native touch scrolling with a dedicated scroll-safe interaction layer.
+- Chat background now uses an almost-transparent black veil so supplied photos remain visible.
+- Snake touch input changes direction as soon as a swipe direction is detected.
+- Added Guess the Color: two players choose secret colors, then guess the opponent; correct guesses score 1, first to 5 wins, simultaneous 5-5 is a draw.
+- Sender-side photo/voice messages appear immediately and media chunks are assembled locally as well as remotely.
+- Typing indicator moved inside the chat area.
+- Landing title is now simply SPINIT in a gold Cinzel treatment.
